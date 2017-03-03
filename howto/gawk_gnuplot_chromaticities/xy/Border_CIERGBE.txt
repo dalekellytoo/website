@@ -1,0 +1,9 @@
+#http://www.brucelindbloom.com/index.html?ColorCalculator.html
+#white point E: 0.
+#x	y	z	X	Y	Z	R	G	B	0xRGB
+#1	2`	3	4	5	6	7	8	9	10
+0.7350	0.2650	-	-	0.176204 -	255	0	0	0xFF0000
+0.2740	0.7170	-	-	0.812985 -	0	255	0	0x00FF00
+0.1670	0.0090	-	-	0.010811 -	0	0	255	0x0000FF
+0.7350	0.2650	-	-	0.176204 -	255	0	0	0xFF0000
+

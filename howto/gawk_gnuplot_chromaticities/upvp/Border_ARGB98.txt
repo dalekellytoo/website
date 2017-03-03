@@ -1,0 +1,8 @@
+#http://www.brucelindbloom.com/index.html?ColorCalculator.html
+#x	y	z	X	Y	Z	R	G	B	0xRGB
+#1	2`	3	4	5	6	7	8	9	10
+0.64	0.33	-	-	0.297361 -	255	0	0	0xFF0000
+0.21	0.71	-	-	0.627355 -	0	255	0	0x00FF00
+0.15	0.06	-	-	0.075285 -	0	0	255	0x0000FF
+0.64	0.33	-	-	0.297361 -	255	0	0	0xFF0000
+

@@ -1,0 +1,10 @@
+#calculated from Olaf Shultz  o.schultz@enhydralutris.de
+#at http://www.enhydralutris.de/Diverses/plotCIEwithGnuplot.tgz
+#calculations from http://en.wikipedia.org/wiki/CIELUV
+#white point D65
+#0xRGB		u'		v'
+0xFF0000	0.4593639576	0.5247349823
+0x00FF00	0.125		0.5625
+0x0000FF	0.1754385965	0.1578947368
+0xFF0000	0.4593639576	0.5247349823
+

@@ -1,0 +1,7 @@
+#data derived from CIE D002-2004 XYZ tristimulus values
+#at http://www.cie.co.at/ , the source
+#with points chosen of end points of spectral_locus.txt
+#a free source of XYZ is found at http://cvrl.ioo.ucl.ac.uk/cmfs.htm
+#u'		v'
+0.6029416835	0.489899849
+0.2568651941	0.0164765503
