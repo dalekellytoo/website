@@ -46,64 +46,62 @@
 	<p>set size square</p>
 	<p>plot "xy_data_in_visual_range.txt" with lines</p>
 
-	<p><a href="http://www.dalekelly.org/text/xy_data_in_visual_range.txt">xy_data_in_visual_range.txt</a></p>
+	<a href="http://www.dalekelly.org/howto/gawk_gnuplot_chromaticities/xy/c1.png"><img src="http://www.dalekelly.org/howto/gawk_gnuplot_chromaticities/xy/c1.png" alt="Valid HTML 4.01 Strict"></a><br><br>
 
-	<a href="http://www.dalekelly.org/images/c1.png"><img src="http://www.dalekelly.org/images/c1.png" alt="Valid HTML 4.01 Strict"></a><br><br>
-
-	<p><a href="http://www.dalekelly.org/text/line_of_purples.txt">line_of_purples.txt</a></p>
+	<p>line_of_purples.txt</p>
 
 	<p>plot "line_of_purples.txt" with lines</p><br>
 
-	<a href="http://www.dalekelly.org/images/c2.png"><img src="http://www.dalekelly.org/images/c2.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+	<a href="http://www.dalekelly.org/howto/gawk_gnuplot_chromaticities/xy/c2.png"><img src="http://www.dalekelly.org/howto/gawk_gnuplot_chromaticities/xy/c2.png" alt="Valid HTML 4.01 Strict"></a><br><br>
 
-	<p><a href="http://www.dalekelly.org/text/sRGB.txt">sRGB.txt</a></p>
-	<p><a href="http://www.dalekelly.org/text/sRGB_white_point.txt">sRGB_white_point.txt</a></p>
+	<p>sRGB.txt</p>
+	<p>sRGB_white_point.txt</p>
 
 	<p>plot "sRGB.txt" with lines</p>
 	<p>plot "sRGB_white_point.txt"</p><br>
 
-<a href="http://www.dalekelly.org/images/c3.png"><img src="http://www.dalekelly.org/images/c3.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+<a href="http://www.dalekelly.org/howto/gawk_gnuplot_chromaticities/xy/c3.png"><img src="http://www.dalekelly.org/howto/gawk_gnuplot_chromaticities/xy/c3.png" alt="Valid HTML 4.01 Strict"></a><br><br>
 
 	<p> Using Olaf Schultz's o.schultz@enhydralutris.de work, data and awk scripts.</p>
 
 	<p>You will have to quit gnuplot and run this awk program to create the CIEpoints, before adding the colored sRGB gamut to the appropriate plot above in multiplot, if you don't have awk, install gawk from your repository or https://www.gnu.org/software/gawk/</p><br>
-	<p><a href="http://www.dalekelly.org/awk/genCIEpoints.awk">genCIEpoints.awk</a></p><br>
+	<p>genCIEpoints.awk</p><br>
 
 	<p>gawk -f genCIEpointsRGB.awk -v d=5</p><br>
 	<p>plot "CIEpointsRGB.txt" u 1:2:10 w points pt 5 lc rgb variable</p><br>
 
-<a href="http://www.dalekelly.org/images/c5.png"><img src="http://www.dalekelly.org/images/c5.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+<a href="http://www.dalekelly.org/howto/gawk_gnuplot_chromaticities/xy/c5.png"><img src="http://www.dalekelly.org/howto/gawk_gnuplot_chromaticities/xy/c5.png" alt="Valid HTML 4.01 Strict"></a><br><br>
 
 	<p> Using Olaf Schultz's o.schultz@enhydralutris.de work, data and awk scripts, I can get this far with just a few edits. You will have to quit gnuplot and run this awk program to create the CIEpoints, before doing the plot. You will need the following files to do the plot.</p><br>
 
-	<p><a href="http://www.dalekelly.org/text/Border_ARGB98.txt"> Border_ARGB98.txt</a></p>
-	<p><a href="http://www.dalekelly.org/text/Border_CIERGBE.txt"> Border_CIERGBE.txt</a></p>
-	<p><a href="http://www.dalekelly.org/text/Border_ColorMatch.txt"> Border_ColorMatch.txt</a></p>
-	<p><a href="http://www.dalekelly.org/text/Border_ProFoto.txt"> Border_ProFoto.txt</a></p>
-	<p><a href="http://www.dalekelly.org/text/Border_sRGB.txt"> Border_sRGB.txt</a></p>
-	<p><a href="http://www.dalekelly.org/text/CIE1964.txt"> CIE1964.txt</a></p>
-	<p><a href="http://www.dalekelly.org/text/TempeKa.dat"> TempeKa.dat</a></p>
-	<p><a href="http://www.dalekelly.org/plot/CIE_all.gnuplot"> CIE_all.gnuplot</a></p>
+	<p>Border_ARGB98.txt</p>
+	<p>Border_CIERGBE.txt</p>
+	<p>Border_ColorMatch.txt</p>
+	<p>Border_ProFoto.txt</p>
+	<p>Border_sRGB.txt</p>
+	<p>CIE1964.txt</p>
+	<p>TempeKa.dat</p>
+	<p>CIE_all.gnuplot</p>
 
 	<p>gnuplot</p>
 	<p>load "CIE_all.gnuplot"</p><br>
 
 
-<a href="http://www.dalekelly.org/images/c7.png"><img src="http://www.dalekelly.org/images/c7.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+<a href="http://www.dalekelly.org/howto/gawk_gnuplot_chromaticities/xy/c7.png"><img src="http://www.dalekelly.org/howto/gawk_gnuplot_chromaticities/xy/c7.png" alt="Valid HTML 4.01 Strict"></a><br><br>
 
 	<p> Using Olaf Schultz's o.schultz@enhydralutris.de work, data and awk scripts, I can get this far with just a few edits. You will have to quit gnuplot and run this awk program to create the CIEpoints, before doing the plot. You will need the following additional files in addition to the above files to do the plot.</p><br>
 
 	<p>plotting over the whole eye's gamut using a device gamut less than the eye's will produce wrong values, device to device repurposing within the eye's gamut is a better approximation, but here it is</p>
-	<p><a href="http://www.dalekelly.org/plot/CIE_all2.gnuplot"> CIE_all2.gnuplot</a></p>
-	<p><a href="http://www.dalekelly.org/text/CIE_1931.txt"> CIE_1931.txt</a></p>
-	<p><a href="http://www.dalekelly.org/awk/genCIEpoints_overxy.awk"> genCIEpoints_overxy.awk</a></p>
+	<p>CIE_all2.gnuplot</p>
+	<p>CIE_1931.txt</p>
+	<p>genCIEpoints_overxy.awk</p>
 
 	<p>gawk -f genCIEpoints_overxy.awk -v d=0.0025 -v Y=1.0 -v gam=0.454545
 </p>	
 	<p>gnuplot</p>
 	<p>load "CIE_all2.gnuplot"</p><br>
 	
-	<a href="http://www.dalekelly.org/images/c8.png"><img src="http://www.dalekelly.org/images/c8.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+	<a href="http://www.dalekelly.org/howto/gawk_gnuplot_chromaticities/xy/c8.png"><img src="http://www.dalekelly.org/howto/gawk_gnuplot_chromaticities/xy/c8.png" alt="Valid HTML 4.01 Strict"></a><br><br>
 
 	</body>
 </html> 
