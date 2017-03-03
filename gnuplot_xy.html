@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+	<html lang="en">
+
+		<head>
+			<title>Welcome!</title>
+			<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+			<meta name="author" content="Dale Kelly">
+			<meta name="keywords" content="HTML,CSS">
+			<link rel="icon" href="http://www.dalekelly.org/atom.png">
+			<link rel="stylesheet" type="text/css" href="http://www.dalekelly.org/mystyle.css">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+		</head>
+	<body>
+		<hr>
+			<a href="http://www.dalekelly.org/" class="button">CLICK FOR HOME PAGE</a><h3>Just really getting started on this ...</h3>
+
+			<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict" height="31" width="88"></a>
+
+			<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" /></a>
+
+		<hr>
+		<br>
+		<p>See <a href="http://www.dalekelly.org/gnuplot_uv.html">gnuplot_uv</a> for a clearer explanation.</p>
+		<a href="http://gnuplot.info/">gnuplot</a><br>
+		<a href="https://www.gnu.org/software/gawk/">gawk</a><br>
+
+
+		<p>You might be able to install gawk and gnuplot from your OS distribution. I used Ubuntu OS for this HOWTO, this also means the csv,txt,m and gnuplot files only have linefeeds and not carriage returns, I will be working on this..</p><br>
+		<br>
+		<p>XYZ tristimulus values can also be found at <a href="http://cvrl.ioo.ucl.ac.uk/cmfs.htm">http://cvrl.ioo.ucl.ac.uk/cmfs.htm</a></p>
+		<p> The calculations from the CIE tristimulus data to CIE are from <a href="https://en.wikipedia.org/wiki/CIE_1931_color_space//">https://en.wikipedia.org/wiki/CIE_1931_color_space</a></p><br>
+
+		<p>A chromaticity diagram is a uniform two dimensional color gamut at a specific level of light. These calculations are at 100% light but any level from 0-1 can be used in the specific program as long as they are used consistently throughout the process.</p>
+	
+
+<p>Calculate chromaticities from tristimulus values, x=X/(X+Y+Z), y=Y/(X+Y+Z). The text files to plot are linked, if there is a script to create a text file to plot if it is linked.</p>
+	<p>Open a gnome terminal, at the command prompt type the commands proceeding each plot</p><br>
+	<p>gnuplot</p>
+	<p>set mulitplot</p>
+	<p>set xrange [0:0.9]</p>
+	<p>set yrange [0:0.9]</p>
+	<p>set xlabel "x"</p>
+	<p>set ylabel "y"</p>
+	<p>set size square</p>
+	<p>plot "xy_data_in_visual_range.txt" with lines</p>
+
+	<p><a href="http://www.dalekelly.org/text/xy_data_in_visual_range.txt">xy_data_in_visual_range.txt</a></p>
+
+	<a href="http://www.dalekelly.org/images/c1.png"><img src="http://www.dalekelly.org/images/c1.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+
+	<p><a href="http://www.dalekelly.org/text/line_of_purples.txt">line_of_purples.txt</a></p>
+
+	<p>plot "line_of_purples.txt" with lines</p><br>
+
+	<a href="http://www.dalekelly.org/images/c2.png"><img src="http://www.dalekelly.org/images/c2.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+
+	<p><a href="http://www.dalekelly.org/text/sRGB.txt">sRGB.txt</a></p>
+	<p><a href="http://www.dalekelly.org/text/sRGB_white_point.txt">sRGB_white_point.txt</a></p>
+
+	<p>plot "sRGB.txt" with lines</p>
+	<p>plot "sRGB_white_point.txt"</p><br>
+
+<a href="http://www.dalekelly.org/images/c3.png"><img src="http://www.dalekelly.org/images/c3.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+
+	<p> Using Olaf Schultz's o.schultz@enhydralutris.de work, data and awk scripts.</p>
+
+	<p>You will have to quit gnuplot and run this awk program to create the CIEpoints, before adding the colored sRGB gamut to the appropriate plot above in multiplot, if you don't have awk, install gawk from your repository or https://www.gnu.org/software/gawk/</p><br>
+	<p><a href="http://www.dalekelly.org/awk/genCIEpoints.awk">genCIEpoints.awk</a></p><br>
+
+	<p>gawk -f genCIEpointsRGB.awk -v d=5</p><br>
+	<p>plot "CIEpointsRGB.txt" u 1:2:10 w points pt 5 lc rgb variable</p><br>
+
+<a href="http://www.dalekelly.org/images/c5.png"><img src="http://www.dalekelly.org/images/c5.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+
+	<p> Using Olaf Schultz's o.schultz@enhydralutris.de work, data and awk scripts, I can get this far with just a few edits. You will have to quit gnuplot and run this awk program to create the CIEpoints, before doing the plot. You will need the following files to do the plot.</p><br>
+
+	<p><a href="http://www.dalekelly.org/text/Border_ARGB98.txt"> Border_ARGB98.txt</a></p>
+	<p><a href="http://www.dalekelly.org/text/Border_CIERGBE.txt"> Border_CIERGBE.txt</a></p>
+	<p><a href="http://www.dalekelly.org/text/Border_ColorMatch.txt"> Border_ColorMatch.txt</a></p>
+	<p><a href="http://www.dalekelly.org/text/Border_ProFoto.txt"> Border_ProFoto.txt</a></p>
+	<p><a href="http://www.dalekelly.org/text/Border_sRGB.txt"> Border_sRGB.txt</a></p>
+	<p><a href="http://www.dalekelly.org/text/CIE1964.txt"> CIE1964.txt</a></p>
+	<p><a href="http://www.dalekelly.org/text/TempeKa.dat"> TempeKa.dat</a></p>
+	<p><a href="http://www.dalekelly.org/plot/CIE_all.gnuplot"> CIE_all.gnuplot</a></p>
+
+	<p>gnuplot</p>
+	<p>load "CIE_all.gnuplot"</p><br>
+
+
+<a href="http://www.dalekelly.org/images/c7.png"><img src="http://www.dalekelly.org/images/c7.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+
+	<p> Using Olaf Schultz's o.schultz@enhydralutris.de work, data and awk scripts, I can get this far with just a few edits. You will have to quit gnuplot and run this awk program to create the CIEpoints, before doing the plot. You will need the following additional files in addition to the above files to do the plot.</p><br>
+
+	<p>plotting over the whole eye's gamut using a device gamut less than the eye's will produce wrong values, device to device repurposing within the eye's gamut is a better approximation, but here it is</p>
+	<p><a href="http://www.dalekelly.org/plot/CIE_all2.gnuplot"> CIE_all2.gnuplot</a></p>
+	<p><a href="http://www.dalekelly.org/text/CIE_1931.txt"> CIE_1931.txt</a></p>
+	<p><a href="http://www.dalekelly.org/awk/genCIEpoints_overxy.awk"> genCIEpoints_overxy.awk</a></p>
+
+	<p>gawk -f genCIEpoints_overxy.awk -v d=0.0025 -v Y=1.0 -v gam=0.454545
+</p>	
+	<p>gnuplot</p>
+	<p>load "CIE_all2.gnuplot"</p><br>
+	
+	<a href="http://www.dalekelly.org/images/c8.png"><img src="http://www.dalekelly.org/images/c8.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+
+	</body>
+</html> 
+
+		

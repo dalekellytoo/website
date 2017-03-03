@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+	<html lang="en">
+
+		<head>
+			<title>Welcome!</title>
+			<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+			<meta name="author" content="Dale Kelly">
+			<meta name="keywords" content="HTML,CSS">
+			<link rel="icon" href="http://www.dalekelly.org/atom.png">
+			<link rel="stylesheet" type="text/css" href="http://www.dalekelly.org/mystyle.css">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+		</head>
+
+	<body>		
+		<hr>
+			<a href="http://www.dalekelly.org/" class="button">CLICK FOR HOME PAGE</a><h3>Just really getting started on this ...</h3>
+
+			<a href="http://validator.w3.org/check?uri=referer"><img src="http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01 Strict" height="31" width="88"></a>
+
+			<a href="http://jigsaw.w3.org/css-validator/check/referer"><img style="border:0;width:88px;height:31px" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="Valid CSS!" /></a>
+
+		<hr>
+		<br>
+		<a href="http://gnuplot.info/">gnuplot</a><br>
+		<a href="https://www.gnu.org/software/gawk/">gawk</a><br>
+		<p>You might be able to install gawk and gnuplot from your OS distribution. I used Ubuntu OS for this HOWTO, this also means the csv,txt,m and gnuplot files only have linefeeds and not carriage returns, I will be working on this..</p><br>
+		<br>
+		<p>XYZ tristimulus values can be found at <a href="http://cvrl.ioo.ucl.ac.uk/cmfs.htm">http://cvrl.ioo.ucl.ac.uk/cmfs.htm</a></p>
+		<p> The calculations from the CIE tristimulus data to CIELUV are from <a href="https://en.wikipedia.org/wiki/CIELUV//">https://en.wikipedia.org/wiki/CIELUV</a></p><br>
+
+
+	<p>A chromaticity diagram is a uniform two dimensional color gamut at a specific level of light. These calculations are at 100% light but any level from 0-1 can be used in the specific program as long as they are used consistently throughout the process.</p>
+
+	<p>Calculate chromaticities from tristimulus values, up=4*X/(X+15*Y+3*Z), vp=9*Y/(X+15*Y+3*Z). u'v' chromaticities are more uniform than x,y, practically I don't know if it matters. CIELUV derived from u'v'L also has a saturation correlate. All the specific files you will need are in <a href="http://www.dalekelly.org/gnuplot_upvp_chromaticities.tar.gz">gnuplot_upvp_chromaticities.tar.gz</a> credits to Olaf Schultz's o.schultz@enhydralutris.de work <a href="http://www.enhydralutris.de/Diverses/plotCIEwithGnuplot.tgz">http://www.enhydralutris.de/Diverses/plotCIEwithGnuplot.tgz</a></p>
+	<p>Open a gnome terminal, at the command prompt type the commands proceeding each plot</p><br>
+	<p>gnuplot</p>
+	<p>load "upvp_spectral_locus.gnuplot"</p>
+
+	<a href="http://www.dalekelly.org/images/upvp1.png"><img src="http://www.dalekelly.org/images/upvp1.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+
+	<p>gnuplot</p>
+	<p>load "upvp_all.gnuplot"</p>
+
+	<a href="http://www.dalekelly.org/images/upvp2.png"><img src="http://www.dalekelly.org/images/upvp2.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+
+	<p> I know I have errors in here I have to fix.</p>
+	<p>gawk -f gen_uv_CIEpoints_sRGB.awk -v d=5 </p>
+	<p>gnuplot</p>
+	<p>load "upvp_all_sRGBpoints.gnuplot"</p>
+
+<a href="http://www.dalekelly.org/images/upvp3.png"><img src="http://www.dalekelly.org/images/upvp3.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+
+	<p>plotting over the whole eye's gamut using a device gamut less than the eye's will produce wrong values, device to device repurposing within the eye's gamut is a better approximation, but here it is</p>
+	<p> I know I have other errors in here I have to fix.</p>
+	<p>gawk -f genCIEpoints_overuv.awk -v d=0.0025 -v Y=1.0 -v gam=0.454545</p>
+	<p>gnuplot</p>
+	<p>load "upvp_all_CIE_locus.gnuplot"</p>
+
+<a href="http://www.dalekelly.org/images/upvp4.png"><img src="http://www.dalekelly.org/images/upvp4.png" alt="Valid HTML 4.01 Strict"></a><br><br>
+
+	</body>
+</html> 
+
+		
