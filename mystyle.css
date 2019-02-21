@@ -40,7 +40,8 @@ div.content {
     ul.sidenav {
         width:100%;
         height:auto;
-        position:sticky;
+        position:relative;
+	<!-- this is where I tried position:sticky;-->
     }
     ul.sidenav li a {
         float: left;
