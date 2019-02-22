@@ -41,6 +41,7 @@ div.content {
         width:100%;
         height:auto;
         position:relative;
+	<!-- this is where I tried position:fixed;-->
 	<!-- this is where I tried position:sticky;-->
     }
     ul.sidenav li a {
