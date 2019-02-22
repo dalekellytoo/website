@@ -40,8 +40,8 @@ div.content {
     ul.sidenav {
         width:100%;
         height:auto;
-        position:relative;
-	<!-- this is where I tried position:fixed;-->
+        position:fixed;
+	<!-- this is where I had position:relative;-->
 	<!-- this is where I tried position:sticky;-->
     }
     ul.sidenav li a {
